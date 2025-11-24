@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+:root {
+  --green: #bbf330;
+  --dark-green: #7eb101;
+  --yellow-main: #ffe550;
+  --black: #2c2c2c;
+  --white: #fefefe;
+  --pink: #ff705d;
+
+  --font-primary: 'Roboto', sans-serif;
+
+  --font-color1: #3d3d3d;
+  --font-color-2: #969696;
+  --font-color-3: #4a4a4a;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: #f5f5f5;
+  color: var(--font-color1);
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
