@@ -10,11 +10,13 @@ function App() {
   return (
     <>
       <HeaderSection />
+
       <HeroSection />
       <AboutSection />
       <FavoritesSection />
       <ReviewSection />
       <SubscribeSection />
+
       <FooterSection />
     </>
   );

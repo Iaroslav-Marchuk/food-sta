@@ -13,7 +13,7 @@ function SubscribeSection() {
           <input type="text" />
           <Button>Subscribe</Button>
         </div>
-        <img src="/public/banan.jpg" width="608" height="266" alt="banan" />
+        <img src="/banan.jpg" width="608" height="266" alt="banan" />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ function Review({ review, avatar, name }) {
     <div>
       {review}
       <div>
-        <img src={avatar} width="48" height="48" alt="Sumith Shah" />
+        <img src={avatar} width="48" height="48" alt={name} />
         {name}
       </div>
     </div>

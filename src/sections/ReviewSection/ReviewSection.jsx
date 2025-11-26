@@ -13,14 +13,14 @@ function ReviewSection() {
           review={
             'The Best app I have used to order food in a while, so many options to choose from too, I would recommend to a freind, No questions asked'
           }
-          avatar={'/public/customer1.jpg'}
+          avatar={'/customer1.jpg'}
           name={'Sumith Shah'}
         />
         <Review
           review={
             'The ease with which I can just go in and order what i want was amazing, It has been a very pleasant experience ordering from this app'
           }
-          avatar={'/public/customer2.jpg'}
+          avatar={'/customer2.jpg'}
           name={'Sumith Shah'}
         />
       </div>

@@ -3,7 +3,7 @@ import Button from '../../components/Button/Button.jsx';
 function AboutSection() {
   return (
     <div>
-      <img src="/public/apple.jpg" width="502" height="502" alt="green apple" />
+      <img src="/apple.jpg" width="502" height="502" alt="green apple" />
       <div>
         <h2>What’s Special About Our Offerings</h2>
         <p>
