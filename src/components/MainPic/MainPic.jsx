@@ -1,6 +1,6 @@
-function MainPic() {
+function MainPic({ className = '' }) {
   return (
-    <div>
+    <div className={`${className}`}>
       <img src="/img1.jpg" width="528" height="528" alt="main picture" />
     </div>
   );

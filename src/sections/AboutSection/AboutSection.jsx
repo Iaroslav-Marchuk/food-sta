@@ -2,7 +2,7 @@ import Button from '../../components/Button/Button.jsx';
 
 function AboutSection() {
   return (
-    <div>
+    <section className="">
       <img src="/apple.jpg" width="502" height="502" alt="green apple" />
       <div>
         <h2>What’s Special About Our Offerings</h2>
@@ -30,7 +30,7 @@ function AboutSection() {
         </div>
         <Button>Order Now</Button>
       </div>
-    </div>
+    </section>
   );
 }
 

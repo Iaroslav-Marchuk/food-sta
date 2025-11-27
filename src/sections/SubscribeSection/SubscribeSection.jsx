@@ -2,7 +2,7 @@ import Button from '../../components/Button/Button.jsx';
 
 function SubscribeSection() {
   return (
-    <div>
+    <div className="hidden">
       <div>
         <h2>Subscribe To Get Special Offers</h2>
         <p>

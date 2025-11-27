@@ -3,7 +3,7 @@ import Navigation from '../../components/Navigation/Navigation.jsx';
 
 function FooterSection() {
   return (
-    <div>
+    <div className="hidden">
       <nav>
         <a href="./index.html">
           <svg width="66" height="52">

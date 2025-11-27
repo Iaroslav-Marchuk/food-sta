@@ -2,7 +2,7 @@ import Review from '../../components/Review/Review.jsx';
 
 function ReviewSection() {
   return (
-    <div>
+    <div className="hidden">
       <h2>What our Customers Say</h2>
       <p>
         Don't just take our word for it - see what our satisfied customers have

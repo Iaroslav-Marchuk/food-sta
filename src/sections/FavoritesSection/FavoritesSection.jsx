@@ -1,6 +1,6 @@
 function FavoritesSection() {
   return (
-    <div>
+    <div className="hidden">
       <h2>Some of Our Favorites</h2>
       <p>Looking for something delicious?</p>
       <ul>

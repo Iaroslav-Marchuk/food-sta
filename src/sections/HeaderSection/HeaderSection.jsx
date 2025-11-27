@@ -4,8 +4,8 @@ import Navigation from '../../components/Navigation/Navigation.jsx';
 
 function HeaderSection() {
   return (
-    <Layout className="flex items-center justify-between py-2.5">
-      <a href="./index.html">
+    <Layout className="flex items-center justify-between">
+      <a href="./index.html" className="py-2.5">
         <svg width="66" height="52">
           <use href="/icons.svg#icon-logo"></use>
         </svg>
