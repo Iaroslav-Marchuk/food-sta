@@ -1,4 +1,3 @@
-import Button from '../../components/Button/Button.jsx';
 import Layout from '../../components/Layout/Layout.jsx';
 import MainPic from '../../components/MainPic/MainPic.jsx';
 
@@ -19,7 +18,7 @@ function HeroSection() {
         <MainPic className="hidden" />
         <button
           type="button"
-          className="text-[14px] font-medium text-(--black) bg-(--green) rounded-full px-4.5 py-1.5  "
+          className="text-sm font-medium text-(--black) bg-(--green) rounded-full px-4.5 py-1.5  "
         >
           Order now
         </button>
