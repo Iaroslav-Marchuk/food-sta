@@ -6,12 +6,12 @@ function HeaderSection() {
   return (
     <Layout className="flex items-center justify-between">
       <a href="./index.html" className="py-2.5">
-        <svg width="66" height="52">
+        <svg className="w-16.5 h-13">
           <use href="/icons.svg#icon-logo"></use>
         </svg>
       </a>
       <div className="hidden md:flex">
-        <Navigation />
+        <Navigation className="flex gap-7 [&>li>a]:py-7" />
         <Button>Order Now</Button>
       </div>
       <button className="md:hidden" type="button">
