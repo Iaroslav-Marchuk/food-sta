@@ -1,7 +1,9 @@
 function MainPic({ className = '' }) {
   return (
-    <div className={`${className}`}>
-      <img src="/img1.jpg" width="528" height="528" alt="main picture" />
+    <div
+      className={`border-11 rounded-[50%] border-(--yellow-main) bg-(--white) ${className}`}
+    >
+      <img src="/img2.jpg" alt="main picture" className="rounded-[50%]" />
     </div>
   );
 }

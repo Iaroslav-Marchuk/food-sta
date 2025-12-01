@@ -1,21 +1,20 @@
 import ApplePic from '../../components/ApplePic/ApplePic.jsx';
-import Button from '../../components/Button/Button.jsx';
 import Layout from '../../components/Layout/Layout.jsx';
 
 function AboutSection() {
   return (
-    <section className="mb-33">
+    <section className="mb-33 md:mb-47.5">
       <Layout>
         <ApplePic className="mb-15" />
-        <h2 className="font-bold text-[28px] mb-7 text-(--black)">
+        <h2 className="font-bold text-[28px] mb-7 text-(--black) md:w-[526px] md:text-[42px] md:mb-5">
           What’s Special About Our Offerings
         </h2>
-        <p className="text-sm mb-8 text-(--black) leading-[1.43]">
+        <p className="text-sm mb-8 text-(--black) leading-[1.43] md:w-[500px] md:text-base md:leading-normal md:mb-[25px]">
           With our platform, you can browse through a diverse selection of
           cuisines and local restaurants, and choose from a variety of dishes
           that cater to your specific taste buds.
         </p>
-        <div className="flex flex-col gap-6 mb-7">
+        <div className="flex flex-col gap-6 mb-7 md:flex-row md:gap-20 md:mb-5">
           <div>
             <svg className="w-12 h-12 mb-2">
               <use href="/icons.svg#icon-delivery"></use>
