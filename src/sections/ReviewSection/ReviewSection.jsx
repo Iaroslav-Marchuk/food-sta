@@ -3,16 +3,22 @@ import Review from '../../components/Review/Review.jsx';
 
 function ReviewSection() {
   return (
-    <section className="mb-4">
+    <section className="mb-4 md:mb-11.5">
       <Layout>
-        <h2 className="font-bold text-[28px] mb-5 text-(--black)">
+        <h2
+          className="font-bold text-[28px] mb-5 text-(--black)
+        md:text-[42px]"
+        >
           What our Customers Say
         </h2>
-        <p className="text-sm mb-8 text-(--black) leading-[1.43]">
+        <p
+          className="text-sm mb-8 text-(--black) leading-[1.43]
+        md:text-base md:mb-11"
+        >
           Don't just take our word for it - see what our satisfied customers
           have to say
         </p>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 md:flex-row md:gap-8">
           <Review
             review={
               '“The Best app I have used to order food in a while, so many options to choose from too, I would recommend to a freind, No questions asked”'

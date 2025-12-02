@@ -2,7 +2,7 @@ import Card from '../Card/Card.jsx';
 
 function CardList() {
   return (
-    <ul className="flex flex-col gap-4">
+    <ul className="flex flex-wrap gap-5 md:gap-8">
       <li>
         <Card img={'/gamburger.jpg'} alt={'gamburger'} />
       </li>
@@ -12,14 +12,14 @@ function CardList() {
       <li>
         <Card img={'/pizza.jpg'} alt={'pizza'} />
       </li>
-      <li className="hidden">
-        <Card img={'/borshch.jpg'} alt={'borshch'} />
-      </li>
-      <li className="hidden">
+      <li className="hidden md:flex">
         <Card img={'/chicken.jpg'} alt={'chicken'} />
       </li>
-      <li className="hidden">
+      <li className="hidden md:flex">
         <Card img={'/salat.jpg'} alt={'salat'} />
+      </li>
+      <li className="hidden md:flex">
+        <Card img={'/borshch.jpg'} alt={'borshch'} />
       </li>
     </ul>
   );

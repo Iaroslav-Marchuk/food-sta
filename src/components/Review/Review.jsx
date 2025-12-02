@@ -1,6 +1,6 @@
 function Review({ review, avatar, name, client }) {
   return (
-    <div className="p-2">
+    <div className="p-2 md:p-3">
       <div className="mb-7">
         <ul className="flex gap-1">
           <li>
@@ -31,7 +31,7 @@ function Review({ review, avatar, name, client }) {
         </ul>
       </div>
 
-      <p className="font-bold mb-10 text-(--black)">{review}</p>
+      <p className="font-bold mb-10 text-(--black) md:text-lg">{review}</p>
 
       <div className="flex gap-4 w-40">
         <img src={avatar} alt={name} className="w-12 h-12 py-0.5" />
