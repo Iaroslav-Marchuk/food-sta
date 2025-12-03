@@ -4,6 +4,7 @@ function Navigation({ className = '' }) {
       className={`flex items-center [&>li>a]:block 
                      [&>li>a]:text-sm 
                     [&>li>a]:text-black
+                    [&>li>a]:py-1
                      [&>li>a]:leading-none ${className}`}
     >
       <li>
