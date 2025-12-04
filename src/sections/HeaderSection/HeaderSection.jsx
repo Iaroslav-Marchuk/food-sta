@@ -10,7 +10,7 @@ function HeaderSection() {
         </svg>
       </a>
 
-      <Navigation className="hidden md:flex gap-7 [&>li>a]:py-7 " />
+      <Navigation className="hidden md:flex gap-7 [&>li>a]:py-7" />
       <button className="hidden md:block text-sm font-medium text-(--black) bg-(--green) rounded-full px-4.5 py-1.5 md:ml-7.5">
         Order Now
       </button>

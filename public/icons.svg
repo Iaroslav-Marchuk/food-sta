@@ -25,7 +25,7 @@
 </symbol>
 
 <symbol id="icon-frame" viewBox="0 0 32 32">
-    <path fill="none" stroke-width="0.3429" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M31.829 16c0 8.742-7.087 15.829-15.829 15.829s-15.829-7.087-15.829-15.829c0-8.742 7.087-15.829 15.829-15.829s15.829 7.087 15.829 15.829z"></path>
+    <path fill="none" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M31.829 16c0 8.742-7.087 15.829-15.829 15.829s-15.829-7.087-15.829-15.829c0-8.742 7.087-15.829 15.829-15.829s15.829 7.087 15.829 15.829z"></path>
 </symbol>
 
 <symbol id="icon-background" viewBox="0 0 32 32">
