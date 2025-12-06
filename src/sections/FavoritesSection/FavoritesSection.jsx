@@ -3,12 +3,19 @@ import Layout from '../../components/Layout/Layout.jsx';
 
 function FavoritesSection() {
   return (
-    <section className="mb-30 md:mb-40">
+    <section className="mb-30 md:mb-40 xl:mb-25">
       <Layout>
-        <h2 className="font-bold text-[28px] text-center mb-5 text-(--black) md:text-[42px]">
+        <h2
+          className="font-bold text-[28px] text-center mb-5 text-(--black)
+        md:text-[42px]"
+        >
           Some of Our Favorites
         </h2>
-        <p className="text-sm text-center mb-15 text-(--black) leading-[1.43] md:text-base">
+        <p
+          className="text-sm text-center mb-15 text-(--black) leading-[1.43]
+        md:text-base
+        xl:mb-10"
+        >
           Looking for something delicious?
         </p>
         <CardList />
