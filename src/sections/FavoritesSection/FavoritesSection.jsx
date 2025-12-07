@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout.jsx';
 
 function FavoritesSection() {
   return (
-    <section className="mb-30 md:mb-40 xl:mb-25">
+    <section id="menu" className="mb-30 md:mb-40 xl:mb-25">
       <Layout>
         <h2
           className="font-bold text-[28px] text-center mb-5 text-(--black)

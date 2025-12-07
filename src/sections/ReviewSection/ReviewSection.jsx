@@ -4,6 +4,7 @@ import Review from '../../components/Review/Review.jsx';
 function ReviewSection() {
   return (
     <section
+      id="service"
       className="mb-4
     md:mb-11.5
     xl:mb-44 xl:bg-(--yellow-main) xl:pt-35 xl:pb-32"

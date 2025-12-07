@@ -4,6 +4,7 @@ import Layout from '../../components/Layout/Layout.jsx';
 function AboutSection() {
   return (
     <section
+      id="about"
       className="mb-33 md:mb-47.5
     xl:mb-30 xl:pt-42 xl:pb-31 xl:bg-(--yellow-main) xl:-z-10"
     >

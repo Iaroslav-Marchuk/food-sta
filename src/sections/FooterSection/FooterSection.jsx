@@ -1,4 +1,3 @@
-import Button from '../../components/Button/Button.jsx';
 import Layout from '../../components/Layout/Layout.jsx';
 import Navigation from '../../components/Navigation/Navigation.jsx';
 import PrivacyList from '../../components/PrivacyList/PrivacyList.jsx';
@@ -36,7 +35,7 @@ function FooterSection() {
               <use href="/icons.svg#icon-logo"></use>
             </svg>
           </a>
-          <Navigation className="flex-col mt-1 pt-1 gap-4 [&>li>a]:py-0 md:flex-row md:gap-7" />
+          <Navigation className="flex-col mt-1 pt-1 gap-4 text-sm  [&>li>a]:py-0 md:flex-row md:gap-7" />
         </div>
 
         <div

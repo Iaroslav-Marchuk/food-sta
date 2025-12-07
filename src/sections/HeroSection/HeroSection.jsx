@@ -3,7 +3,7 @@ import MainPic from '../../components/MainPic/MainPic.jsx';
 
 function HeroSection() {
   return (
-    <section className="mt-15 mb-22.5 xl:mt-0 xl:mb-14">
+    <section id="home" className="mt-15 mb-22.5 xl:mt-0 xl:mb-14">
       <Layout className="md:relative">
         <h1
           className="font-bold text-[28px] mb-7 text-(--black)

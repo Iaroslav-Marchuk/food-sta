@@ -1,9 +1,8 @@
-import Button from '../../components/Button/Button.jsx';
 import Layout from '../../components/Layout/Layout.jsx';
 
 function SubscribeSection() {
   return (
-    <section className="mb-15 md:mb-25">
+    <section id="contact" className="mb-15 md:mb-25">
       <Layout className="xl:flex xl:flex-row-reverse xl:items-center">
         <img
           src="/banan.jpg"
