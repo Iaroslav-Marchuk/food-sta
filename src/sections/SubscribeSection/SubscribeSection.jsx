@@ -40,7 +40,12 @@ function SubscribeSection() {
             <button
               type="submit"
               className="text-sm font-medium text-(--black) bg-(--green) rounded-[30px] px-5 py-2.5 ml-auto
-            md:ml-0"
+            md:ml-0
+
+            transition-colors duration-300
+            active:bg-(--yellow-main) active:shadow-lg
+            xl:hover:bg-(--yellow-main) xl:hover:shadow-lg
+            "
             >
               Subscribe
             </button>

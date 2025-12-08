@@ -63,7 +63,12 @@ function AboutSection() {
           <div className="flex gap-6">
             <button
               type="button"
-              className="text-sm font-medium text-(--black) bg-white rounded-[30px] border-solid border-2 border-(--dark-green) px-5 py-2.5"
+              className="text-sm font-medium text-(--black) bg-white rounded-[30px] border-solid border-2 border-(--dark-green) px-5 py-2.5
+              
+              transition-colors duration-300
+              active:border-(--green) active:bg-(--green) active:shadow-lg
+              xl:hover:border-(--green) xl:hover:bg-(--green) xl:hover:shadow-lg
+              "
             >
               Order Now
             </button>

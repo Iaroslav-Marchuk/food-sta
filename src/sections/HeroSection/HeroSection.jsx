@@ -32,7 +32,12 @@ function HeroSection() {
         <button
           type="button"
           className="text-sm font-medium text-(--black) bg-(--green) rounded-full px-4.5 py-1.5 mb-18
-          xl:mb-40"
+          xl:mb-40
+          
+          transition-colors duration-300
+          active:bg-(--yellow-main) active:shadow-lg
+          xl:hover:bg-(--yellow-main) xl:hover:shadow-lg
+          "
         >
           Order now
         </button>

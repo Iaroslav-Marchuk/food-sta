@@ -5,7 +5,7 @@ import ModalSideBar from '../../components/ModalSideBar/ModalSideBar.jsx';
 import Navigation from '../../components/Navigation/Navigation.jsx';
 import MobileMenu from '../../components/MobileMenu/MobileMenu.jsx';
 
-function HeaderSection() {
+function HeaderSection({ handleOpenModal }) {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   const openMobileMenu = () => setMobileMenuIsOpen(true);
   const closeMobileMenu = () => {
@@ -25,7 +25,15 @@ function HeaderSection() {
       </a>
 
       <Navigation className="hidden md:flex text-sm gap-7 [&>li>a]:py-7" />
-      <button className="hidden md:block text-sm font-medium text-(--black) bg-(--green) rounded-full px-4.5 py-1.5 md:ml-7.5">
+      <button
+        onClick={handleOpenModal}
+        className="hidden md:block text-sm font-medium text-(--black) bg-(--green) rounded-full px-4.5 py-1.5
+      md:ml-7.5
+
+      transition-colors duration-300
+      active:bg-(--yellow-main) active:shadow-lg
+      xl:hover:bg-(--yellow-main) xl:hover:shadow-lg"
+      >
         Order Now
       </button>
 

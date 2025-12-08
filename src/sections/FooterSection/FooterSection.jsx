@@ -55,7 +55,12 @@ function FooterSection() {
             />
             <button
               type="submit"
-              className="text-sm font-medium text-(--black) bg-white rounded-[30px] border-solid border-2 border-(--dark-green) px-5 py-2.5 w-26"
+              className="text-sm font-medium text-(--black) bg-white rounded-[30px] border-solid border-2 border-(--dark-green) px-5 py-2.5 w-26
+              
+              transition-colors duration-300
+              active:border-(--yellow-main) active:shadow-lg
+              xl:hover:border-(--yellow-main) xl:hover:shadow-lg
+              "
             >
               Subscribe
             </button>
