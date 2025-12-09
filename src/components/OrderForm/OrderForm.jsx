@@ -1,124 +1,167 @@
-import { useState } from 'react';
 import toast from 'react-hot-toast';
 
-OrderForm;
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
+
+const initialValues = {
+  name: '',
+  phone: '',
+  email: '',
+};
+
+const phoneRegExp = /^\+?3?8?0\d{9}$/;
+
+const OrderSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, 'Miminum 3 symboles')
+    .max(16, 'Maximum 16 symboles')
+    .required('This field is required'),
+  phone: Yup.string()
+    .matches(phoneRegExp, 'Incorect phone number')
+    .required('This field is required'),
+  email: Yup.string()
+    .email('Not a valid email address (example@email.com)')
+    .required('This field is required'),
+});
+
 function OrderForm({ onClose }) {
-  const [form, setForm] = useState({ name: '', phone: '', email: '' });
-  const [errors, setErrors] = useState({
-    name: false,
-    phone: false,
-    email: false,
-  });
-
-  const validateField = (name, value) => {
-    if (name === 'name') return value.trim() === '';
-    if (name === 'phone')
-      return !/^\+?\d{10,15}$/.test(value.replace(/\D/g, ''));
-    if (name === 'email') return !/^\S+@\S+\.\S+$/.test(value);
-    return false;
-  };
-
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-
-    // Динамічна підсвітка
-    setErrors({ ...errors, [name]: validateField(name, value) });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    // Перевіряємо всі поля
-    const newErrors = {
-      name: validateField('name', form.name),
-      phone: validateField('phone', form.phone),
-      email: validateField('email', form.email),
-    };
-    setErrors(newErrors);
-
-    const isValid = !Object.values(newErrors).some(Boolean);
-    if (isValid) {
-      console.log('Order sent:', form);
+  const handleSubmit = async (values, actions) => {
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000));
       toast.success('Order successfully sent!');
+      console.log(values);
+      actions.resetForm();
       onClose();
+    } catch (error) {
+      toast.error('Failed to order: ' + error.message);
+    } finally {
+      actions.setSubmitting(false);
     }
   };
 
-  const getInputClass = field => {
-    if (errors[field])
-      return 'border-2 border-red-500 shadow-[inset_0_2px_4px_0_rgba(255,0,0,0.15)]';
-    if (form[field].trim() !== '')
-      return 'border-2 border-green-500 shadow-[inset_0_2px_4px_0_rgba(0,128,0,0.15)]';
-    return '';
-  };
-
   return (
-    <form className="flex flex-col text-(--black)" onSubmit={handleSubmit}>
+    <div>
       <h2 className="font-bold text-2xl text-center mb-5 leading-[1.2]">
         Order Form
       </h2>
-      <ul
-        className="flex flex-col gap-6
-      [&>li>label]:flex [&>li>label]:flex-col [&>li>label]:gap-0.5 [&>li>label]:pl-3
-      [&>li>label]:font-medium [&>li>label]:leading-[1.4]
-
-      [&>li>label>span]:pl-3
-
-      [&>li>label>input]:w-full [&>li>label>input]:ml-0 [&>li>label>input]:bg-(--white)
-      [&>li>label>input]:p-3 [&>li>label>input]:border-[rgba(18,18,18,0.12)] [&>li>label>input]:shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.15)] [&>li>label>input]:border
-      [&>li>label>input]:rounded-[30px] [&>li>label>input]:placeholder-[#c4c4c4] [&>li>label>input]:placeholder:font-normal [&>li>label>input]:placeholder:leading-tight [&>li>label>input]:placeholder:text-base
-      
-      "
+      <Formik
+        initialValues={initialValues}
+        validationSchema={OrderSchema}
+        validateOnBlur={true}
+        validateOnChange={true}
+        onSubmit={handleSubmit}
       >
-        <li>
-          <label>
-            <span>Name</span>
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={form.name}
-              name="name"
-              onChange={handleChange}
-              className={getInputClass('name')}
-            />
-          </label>
-        </li>
-        <li>
-          <label>
-            <span>Phone number</span>
-            <input
-              type="text"
-              placeholder="+38(0_ _) _ _ _   _ _   _ _"
-              value={form.phone}
-              name="phone"
-              onChange={handleChange}
-              className={getInputClass('phone')}
-            />
-          </label>
-        </li>
-        <li>
-          <label>
-            <span>E-mail</span>
-            <input
-              type="text"
-              placeholder="example@gmail.com"
-              value={form.email}
-              name="email"
-              onChange={handleChange}
-              className={getInputClass('email')}
-            />
-          </label>
-        </li>
-      </ul>
+        {({ errors, touched, isValid, handleSubmit }) => (
+          <Form className="flex flex-col text-(--black) gap-6">
+            <div className="flex flex-col">
+              <label
+                htmlFor="name"
+                className="mb-0.5 pl-3 font-medium leading-[1.4]"
+              >
+                Name
+              </label>
+              <Field
+                className={`bg-(--white) p-3 border-[rgba(18,18,18,0.12)] shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.15)] outline-none
+              border rounded-[30px] placeholder-[#c4c4c4] placeholder:font-normal placeholder:leading-tight placeholder:text-base
+               ${touched.name && errors.name && 'border-red-400'}
+            ${touched.name && !errors.name && 'border-green-500'}`}
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your name"
+              />
+              <ErrorMessage name="name">
+                {msg => (
+                  <div className="flex gap-1 items-center font-medium text-[13px] leading-[1.4] text-(--pink) pl-3">
+                    <svg className="h-3 w-3">
+                      <use href="/icons.svg#icon-error"></use>
+                    </svg>
+                    {msg}
+                  </div>
+                )}
+              </ErrorMessage>
+            </div>
 
-      <button
-        type="submit"
-        className="mt-8 bg-(--white) py-2.5 px-5 w-[106px] mx-auto border-2 border-(--dark-green) rounded-[30px]"
-      >
-        Send
-      </button>
-    </form>
+            <div className="flex flex-col">
+              <label
+                htmlFor="phone"
+                className="mb-0.5 pl-3 font-medium leading-[1.4]"
+              >
+                Phone number
+              </label>
+              <Field
+                className={`bg-(--white) p-3 border-[rgba(18,18,18,0.12)] shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.15)] outline-none
+              border rounded-[30px] placeholder-[#c4c4c4] placeholder:font-normal placeholder:leading-tight placeholder:text-base
+               ${touched.phone && errors.phone && 'border-red-400'}
+            ${touched.phone && !errors.phone && 'border-green-500'}`}
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="+38(0_ _) _ _ _   _ _   _ _"
+              />
+              <ErrorMessage name="phone">
+                {msg => (
+                  <div className="flex gap-1 items-center font-medium text-[13px] leading-[1.4] text-(--pink) pl-3">
+                    <svg className="h-3 w-3">
+                      <use href="/icons.svg#icon-error"></use>
+                    </svg>
+                    {msg}
+                  </div>
+                )}
+              </ErrorMessage>
+            </div>
+
+            <div className="flex flex-col">
+              <label
+                htmlFor="email"
+                className="mb-0.5 pl-3 font-medium leading-[1.4]"
+              >
+                E-mail
+              </label>
+              <Field
+                className={`bg-(--white) p-3 border-[rgba(18,18,18,0.12)] shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.15)] outline-none
+              border rounded-[30px] placeholder-[#c4c4c4] placeholder:font-normal placeholder:leading-tight placeholder:text-base
+               ${touched.email && errors.email && 'border-red-400'}
+            ${touched.email && !errors.email && 'border-green-500'}`}
+                type="text"
+                name="email"
+                id="email"
+                placeholder="example@gmail.com"
+              />
+              <ErrorMessage name="email">
+                {msg => (
+                  <div className="flex gap-1 items-center font-medium text-[13px] leading-[1.4] text-(--pink) pl-3">
+                    <svg className="h-3 w-3">
+                      <use href="/icons.svg#icon-error"></use>
+                    </svg>
+                    {msg}
+                  </div>
+                )}
+              </ErrorMessage>
+            </div>
+
+            <button
+              type="button"
+              className={`
+          mt-8 py-2.5 px-5 w-[106px] mx-auto rounded-[30px] bg-(--white) border-2 border-(--dark-green)
+          ${
+            Object.keys(errors).length > 0
+              ? 'border-2 border-red-400'
+              : 'bg-lime-300'
+          } 
+        `}
+              onClick={() => {
+                if (!isValid) {
+                  toast.error('Please fill in all fields correctly!');
+                } else handleSubmit();
+              }}
+            >
+              Send
+            </button>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 }
 

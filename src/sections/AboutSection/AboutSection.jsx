@@ -1,7 +1,7 @@
 import ApplePic from '../../components/ApplePic/ApplePic.jsx';
 import Layout from '../../components/Layout/Layout.jsx';
 
-function AboutSection() {
+function AboutSection({ handleOpenModal }) {
   return (
     <section
       id="about"
@@ -69,6 +69,7 @@ function AboutSection() {
               active:border-(--green) active:bg-(--green) active:shadow-lg
               xl:hover:border-(--green) xl:hover:bg-(--green) xl:hover:shadow-lg
               "
+              onClick={handleOpenModal}
             >
               Order Now
             </button>

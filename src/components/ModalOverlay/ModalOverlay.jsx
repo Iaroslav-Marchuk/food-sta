@@ -9,7 +9,7 @@ function ModalOverlay({ children, isOpen, onClose }) {
       ariaHideApp={false}
       closeTimeoutMS={300}
       className={{
-        base: 'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-115 h-115 rounded-[30px] p-8 bg-(--yellow-main) color-(--black) opacity-0 scale-90 shadow-2xl outline-none transition-all duration-300 ease-out',
+        base: 'fixed top-15 left-1/2 -translate-x-1/2 w-80 rounded-[30px] p-8 bg-(--yellow-main) color-(--black) opacity-0 scale-90 shadow-2xl outline-none transition-all duration-300 ease-out md:top-1/2 md:-translate-y-1/2 md:w-115',
         afterOpen: 'opacity-100 scale-100',
         beforeClose: 'opacity-0 scale-90',
       }}

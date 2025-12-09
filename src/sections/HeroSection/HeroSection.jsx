@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout/Layout.jsx';
 import MainPic from '../../components/MainPic/MainPic.jsx';
 
-function HeroSection() {
+function HeroSection({ handleOpenModal }) {
   return (
     <section id="home" className="mt-15 mb-22.5 xl:mt-0 xl:mb-14">
       <Layout className="md:relative">
@@ -38,6 +38,7 @@ function HeroSection() {
           active:bg-(--yellow-main) active:shadow-lg
           xl:hover:bg-(--yellow-main) xl:hover:shadow-lg
           "
+          onClick={handleOpenModal}
         >
           Order now
         </button>
