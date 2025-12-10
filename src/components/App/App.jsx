@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Toaster } from 'react-hot-toast';
 
 import AboutSection from '../../sections/AboutSection/AboutSection.jsx';
 import FavoritesSection from '../../sections/FavoritesSection/FavoritesSection.jsx';
@@ -10,6 +9,7 @@ import ReviewSection from '../../sections/ReviewSection/ReviewSection.jsx';
 import SubscribeSection from '../../sections/SubscribeSection/SubscribeSection.jsx';
 import ModalOverlay from '../ModalOverlay/ModalOverlay.jsx';
 import OrderForm from '../OrderForm/OrderForm.jsx';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);

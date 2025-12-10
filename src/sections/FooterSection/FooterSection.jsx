@@ -1,8 +1,34 @@
+import toast from 'react-hot-toast';
 import Layout from '../../components/Layout/Layout.jsx';
 import Navigation from '../../components/Navigation/Navigation.jsx';
 import PrivacyList from '../../components/PrivacyList/PrivacyList.jsx';
+import { useState } from 'react';
 
 function FooterSection() {
+  const [email, setEmail] = useState('');
+  const [touched, setTouched] = useState(false);
+
+  const isValid = /^\S+@\S+\.\S+$/.test(email);
+  const hasError = touched && !isValid;
+
+  const borderClass = hasError
+    ? 'border-red-400'
+    : isValid
+    ? 'border-green-500'
+    : 'border-(--yellow-main)';
+
+  const handleSubscribe = async () => {
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      toast.success('Subscribed!');
+      console.log(email);
+      setEmail('');
+      setTouched(false);
+    } catch (error) {
+      toast.error('Failed to subscribe: ' + error.message);
+    }
+  };
+
   return (
     <Layout
       className="relative py-15
@@ -46,15 +72,40 @@ function FooterSection() {
           <span className="mb-3 inline-block text-medium text-sm text-(--black)">
             Subscribe
           </span>
-          <div className="flex flex-col gap-5 mb-6 md:flex-row md:gap-3 md:mb-3">
-            <input
-              type="text"
-              placeholder="Enter your email"
-              className="w-full h-[42px] bg-white rounded-[30px] border-solid p-2.5 border-[0.85px] border-(--yellow-main) placeholder:text-xs placeholder:text-[#505050]
-          md:w-70"
-            />
+          <div className="flex flex-col gap-5 mb-6 md:flex-row md:items-baseline md:gap-3 md:mb-3">
+            <div>
+              <input
+                type="text"
+                placeholder="Enter your email"
+                value={email}
+                onChange={event => {
+                  setEmail(event.target.value);
+                }}
+                onBlur={() => {
+                  setTouched(true);
+                }}
+                className={`w-full h-[42px] bg-white rounded-[30px] border-solid p-2.5 border-[0.85px] border-(--yellow-main) placeholder:text-xs placeholder:text-[#505050]
+          md:w-70
+            ${borderClass}`}
+              />
+              {hasError && (
+                <div className="flex gap-1 items-center font-medium text-[13px] leading-[1.4] text-(--pink) pl-3">
+                  <svg className="h-3 w-3">
+                    <use href="/icons.svg#icon-error"></use>
+                  </svg>
+                  <span>Not a valid email address (example@email.com)</span>
+                </div>
+              )}
+            </div>
+
             <button
               type="submit"
+              onClick={() => {
+                if (!isValid) {
+                  setTouched(true);
+                  toast.error('Please fill field correctly!');
+                } else handleSubscribe();
+              }}
               className="text-sm font-medium text-(--black) bg-white rounded-[30px] border-solid border-2 border-(--dark-green) px-5 py-2.5 w-26
               
               transition-colors duration-300
