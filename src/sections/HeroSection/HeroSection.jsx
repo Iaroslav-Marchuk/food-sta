@@ -23,12 +23,13 @@ function HeroSection({ handleOpenModal }) {
           home.
         </p>
 
-        <MainPic
-          className="hidden
-        md:block w-80 h-80 absolute bottom-0 right-8
-        xl:w-145 xl:h-145 xl:right-7.5 xl:bottom-3.5
-        "
-        />
+        <div
+          className="hidden md:block w-80 h-80 absolute bottom-0 right-8
+        xl:w-145 xl:h-145 xl:right-7.5 xl:bottom-3.5"
+        >
+          <MainPic className="w-full h-full" />
+        </div>
+
         <button
           type="button"
           className="text-sm font-medium text-(--black) bg-(--green) rounded-full px-4.5 py-1.5 mb-18
