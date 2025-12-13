@@ -18,8 +18,8 @@ function MainPic({ className = '' }) {
         }}
         speed={600}
         navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.custom-swiper-button-next',
+          prevEl: '.custom-swiper-button-prev',
         }}
         className={`mainpic-swiper border-14 rounded-[50%] border-(--yellow-main) bg-(--white)
         xl:border-26 overflow-hidden
@@ -36,27 +36,35 @@ function MainPic({ className = '' }) {
         </SwiperSlide>
       </Swiper>
       <div
-        className="custom-swiper-button-prev
-                      absolute left-4 top-1/2 -translate-y-1/2 z-20
-                      w-12 h-12 bg-white/90 rounded-full shadow-xl
-                      flex items-center justify-center text-3xl font-light
+        className="custom-swiper-button-next stroke-(--black) hover:stroke-(--dark-green)
+                      absolute -left-3 top-1/2 -translate-y-1/2 z-20
+                      w-9 h-7 bg-white/90 rounded-sm shadow-xl
+                      flex items-center justify-center
                       cursor-pointer select-none
-                      hover:bg-(--yellow-main) hover:scale-110
-                      transition-all duration-200"
+                      hover:scale-110
+                      active:scale-95 active:shadow-2xl
+                      transition-all duration-200
+                      xl:hidden"
       >
-        Previous
+        <svg className="w-3 h-5">
+          <use href="/icons.svg#icon-arr-prev"></use>
+        </svg>
       </div>
 
       <div
-        className="custom-swiper-button-next
-                      absolute right-4 top-1/2 -translate-y-1/2 z-20
-                      w-12 h-12 bg-white/90 rounded-full shadow-xl
-                      flex items-center justify-center text-3xl font-light
+        className="custom-swiper-button-next stroke-(--black) hover:stroke-(--dark-green)
+                      absolute -right-3 top-1/2 -translate-y-1/2 z-20
+                      w-9 h-7 bg-white/90 rounded-sm shadow-xl
+                      flex items-center justify-center
                       cursor-pointer select-none
-                      hover:bg-(--yellow-main) hover:scale-110
-                      transition-all duration-200"
+                      hover:scale-110
+                      active:scale-95 active:shadow-2xl
+                      transition-all duration-200
+                      xl:hidden"
       >
-        Next
+        <svg className="w-3 h-5">
+          <use href="/icons.svg#icon-arr-next" />
+        </svg>
       </div>
     </div>
   );
