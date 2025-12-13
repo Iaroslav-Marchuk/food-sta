@@ -7,7 +7,7 @@ function CardList() {
         <Card img={'/gamburger.jpg'} alt={'gamburger'} />
       </li>
       <li>
-        <Card img={'/pasta.jpg'} alt={'Pasta'} />
+        <Card img={'/pasta.jpg'} alt={'pasta'} />
       </li>
       <li>
         <Card img={'/pizza.jpg'} alt={'pizza'} />
